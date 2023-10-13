@@ -1,0 +1,291 @@
+*{
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  
+}
+
+
+
+.titulo{
+  color: rgba(17, 17, 16, 0.795);    
+  margin-left: 40px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 110px;
+  text-shadow: 4px 4px 4px #eeeaea;
+}
+
+.T{
+  color: #3b3939;
+}
+
+.T:hover{
+  color: #5e5b5b;
+}
+
+
+body{  
+  background-image:  url("./Componentes//img/carrusel1.jpg");
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position:end;
+  background-color: hsl(0, 100%, 100%);
+  
+  
+}
+
+
+
+
+.botonCarrito{
+
+  background-color: #e0dadadc;
+  width: 400px;
+  height: 60px;
+  font-style: italic;
+  font-size: 35px;  
+  border-radius: 19px;
+  color: rgb(73, 72, 69);
+  margin-bottom: 40px;
+  margin-top: 10px; 
+  margin-left: 1500px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.modal-title{
+
+  font-size: 50px;
+  margin-left: 300px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ 
+}
+
+.modal-content{
+  
+  width: 798px;
+  
+   
+}
+
+.table{
+  
+  margin-right: 10px;
+  font-size: 20px;
+  display: flexbox;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.renglonesCarrito{
+  background-color: white;
+  display: flex;
+  width: auto;
+}
+
+
+
+.Carrusel{
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+}
+
+.Carrusel1{
+  width: 1950px;
+  margin-left: 30px;  
+  
+}
+.imagenCarrusel{
+  width: 1950px;
+  height: 450px;
+  margin-left: 30px;
+  
+}
+
+
+.Navegador{
+  width: 100%; 
+  justify-content: center;
+  display: auto;
+  background-color: hsla(24, 91%, 64%, 0.432);
+  width: auto;
+  
+}
+
+nav>div>lu{
+  color: #020202f6; 
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 35px;
+  font-style: italic;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+  }
+
+li{
+  color: #0c0c0c;
+  font-size: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  
+}
+
+.dropdown-item{
+  margin-right: 50px;
+  font-size: 30px;
+  text-decoration: underline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.dropdown-item:hover{
+  
+  color: #e6cfcf;
+}
+
+
+nav> div> Link:hover{
+  text-decoration: underline;
+  color: white;
+
+ 
+}
+nav>div>lu > Link:hover> Link{
+  display: block;
+
+}
+
+/*
+nav> div> lu:hover{
+  text-decoration: underline;
+  color:#fffdfd
+}*/
+
+
+.container3{
+
+  background-color: white;
+  display:inline-block;
+}
+
+.container1{
+
+  display:flex;
+
+
+}
+
+.container{
+    
+   max-width: 600px;
+
+}
+
+
+ .ListFetch{
+  display: flex;
+  background-color: #f59e5748;
+  margin-top: 50px;
+  color: rgb(15, 15, 15);
+
+
+ }
+
+
+ #containerContador{
+ 
+ display: flex;
+ width: 130px;
+ margin-top: 80px;
+ margin-left: 30px;
+  
+ }
+
+ .cantidad{
+  width: 30px;
+  text-align: center;
+  font-size: larger;
+  font-style:initial;
+  
+ }
+#botonAgregar{
+  margin-top: 20px;
+}
+
+.Cards1{
+  
+  background-color: #b85b5bb7;
+  opacity: 98%;
+  border-radius: 10px;
+ 
+
+
+}
+
+.Cards{
+  
+  margin-top: 150px;
+  opacity: 75%;
+  background-color: #dbd08fdc;
+  border-radius: 10px;
+  width: auto;
+  font-size: 30px;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-bottom: 100px;
+  
+}
+
+
+
+.imagen-cards{
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 59px; 
+  margin-left: 70px;
+}
+
+footer{
+  background: #eec67bee;
+  opacity: 75%;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  font-size: 30px; 
+  
+
+ }
+
+ .contenedor-footer{
+  width: auto;
+  font-size: 30px; 
+  border-bottom: 4px solid rgb(199, 125, 65);
+  margin-left: 60px;
+  margin-right: 60px;
+  
+  
+
+ }
+
+
+ .content-foo h4{
+  color: black;
+  font-size: 30px; 
+  font-style: italic;
+  margin-top: 20px;
+  border-bottom: 4px solid rgb(204, 63, 20) ;
+  
+
+ }
+
+ 
+ 
+
+ 
+ 
+ 
