@@ -1,24 +1,11 @@
-import { useEffect } from "react";
-import { useState,useParams } from "react";
-import { pedirItemPorId } from "../PedirItemPorId/PedirItemPorId";
+import { useContext } from "react";
+import { CarContext } from "../Context/CarContext";
 
-export const ImprimirRenglones = ()=>{ 
+export const ImprimirRenglones = ({arreglo})=>{ 
   
+ 
    
-   const [carrito,setCarrito] = useState([]);
-
-   const valor = useParams().id;
-
-   useEffect(()=>{
-     pedirItemPorId(Number(valor))
-    .then((res)=>{
-        setCarrito(res);
-        
-    })
-
-   },[valor])
-
-   
+   const {carrito} = useContext(CarContext);
 
 
     return(
@@ -38,7 +25,7 @@ export const ImprimirRenglones = ()=>{
                    </thead>
                         <tbody  id="items">
 
-                        { carrito.map((item)=><tr key={ item.id}>                                               
+                        { arreglo.map((item)=><tr key={ item.id}>                                               
                                 <td  >{item.marca}</td>
                                   <td >{item.modelo}</td>
                                      <td  ><input  id = {`cantidad-producto-${item.id}`}  key = {`cantidad-producto-${item.id}`}   type="number"  min="1" max="100"  /></td>
