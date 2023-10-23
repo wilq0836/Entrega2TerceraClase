@@ -1,6 +1,11 @@
- const productosFetch = [];  
+
+ const productosFetch = []; 
+ let id = 18;
+
 
  const pedirPost = async()=>{
+
+   
 
     const resp = 
 
@@ -12,15 +17,15 @@
 
     filtrar.forEach(element => {
 
-        const u = {marca:element.title,modelo:element.description,precio:element.price*4300,foto:element.images,cantidad:1};
-        productosFetch.push(u);
-        console.log(u);
+        const productosTienda = {id:++id, marca:element.title,modelo:element.description,precio:element.price*4300,foto:element.images,cantidad:1};
+        productosFetch.push(productosTienda);
+        console.log(productosTienda);
     });
 
  }   
 
  const  getProducts = () =>{
-
+   
     pedirPost();
 
     return new Promise((resolve)=>{
@@ -30,3 +35,22 @@
     })
 }
 export default getProducts;
+
+
+export const pedirItemPorIdFetch = (id)=>{
+
+    return new Promise((resolve,reject)=>{
+
+        const item = productosFetch.find((e)=> e.id === id);
+       
+        if(item){
+            resolve(item);
+        }else{
+            reject({
+                Error:"No se encontro el item por id"
+            })
+        }
+    })
+
+   
+}

@@ -22,16 +22,13 @@ function DesplegarItems (arreglo){
     
 
     const handleOption = (event) => {setSelectOption(event)};
-    //console.log({selectOption});
    
-    //console.log(valor.toString());
-    
     
   
     return(
             <div>       
-                <lu>
-                  {arreglo.map((opcion)=>(<li onClick={()=>{handleOption(opcion.value)}}  className="" key={opcion.value} value={opcion.value} > 
+                <lu className="dropdown">
+                  {arreglo.map((opcion)=>(<li onClick={()=>{handleOption(opcion.value)}}  className="dropdown-item" key={opcion.value} value={opcion.value} > 
                    <Link to='/constructor2'>{opcion.value}</Link> 
                  
                    </li>))}   
