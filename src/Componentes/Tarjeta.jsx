@@ -1,18 +1,24 @@
 import { Link} from "react-router-dom";
+import { CarContext } from "./Context/CarContext";
+import { useContext } from "react";
 
 
-const carrito = [];
 
 
-function Targeta ({valorSeleccionadoLista}){
+
+
+function Targeta ({valorSeleccionadoLista, propiedad}){
+
+
+  const {AgregarCarrito} = useContext(CarContext);
 
   const imprimirTarjeta =(valor)=>{
-
+    
    
     return( 
 
        
-    <div className="container1">{
+    <div className="container4">{
       
       valor.map((item) => 
 
@@ -25,27 +31,17 @@ function Targeta ({valorSeleccionadoLista}){
                 <h5>Marca: {item.marca} </h5>
                 <h5>Modelo: {item.modelo }</h5>
                 <h5>Precio: {item.precio}</h5>
-                <h5>Especificación: {item.cantidad}</h5> 
-                
-                              
-               
-            </div>    
-           
-              <button  onClick={()=>{
-
-              //let encontrarProducto = carrito.includes(item);
-              //const {id,marca,modelo,precio,especificacion,foto,cantidad} = item;
-                new Carrito(item);
-                carrito.push(item);
-                console.log(carrito);
-               
-       
-                     }} key={item.id}   className="btn btn-secondary">Agregar al Carrito</button> 
-
-                <hr></hr>
-               <Link className="btn btn-primary" to={'/Car'} >Ver Carrito</Link>  
+                <h5>Especificación: {item.cantidad}</h5>  
+            </div>   
+            <hr></hr>
+              <button className="btn btn-primary" onClick={()=>AgregarCarrito(item, 1)}>Agregar Carrito</button>  
+              <hr></hr>
+               <Link className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
                <hr></hr>
-               <Link className="btn btn-primary" to={`/VerItem/${item.id}`}  >Ver mas sobre este producto</Link>                   
+               {mostrarBoton(propiedad, item)}
+               
+               <hr></hr>  
+                               
             </div>
             
             </div>  
@@ -67,83 +63,24 @@ function Targeta ({valorSeleccionadoLista}){
 } 
  export default Targeta;
       
-      class Carrito {
-        constructor(id,marca, modelo, precio, especificacion, foto, cantidad) {
-            this.id = id;
-            this.marca = marca;
-            this.modelo = modelo;
-            this.precio = precio;
-            this.especificacion = especificacion;
-            this.foto = foto;
-            this.cantidad = cantidad;
-         }}
+           
+const mostrarBoton = (propiedad, item)=>{
 
- export const ImprimirRenglonesCarrito1 =()=> {
- 
-   
+  if(propiedad === "Biblioteca"){
+    return(
 
-  const eliminarArticulo =(item)=>{
-
-    
-
-     console.log(item);  
-     let posicion = carrito.indexOf(item); 
-     carrito.splice(posicion,1);  
-     console.log({carrito});
-
-    
-    }
-
-
-     return(
-          
-
-       <div className="renglonesCarrito" >    
-          <table className="table">
-            <thead>
-            <tr>
-               <th scope="col">Marca</th>
-                <th scope="col">Modelo</th>
-                   <th scope="col">Cantidad</th>
-                      <th scope="col">Precio</th>
-                          <th scope="col">Total</th>
-                             <th scope="col">Eliminar</th>
-                             </tr>                                           
-                     </thead>
-                          <tbody  id="items">
-
-                          { carrito.map((item)=><tr key={ item.id}>                                               
-                                  <td  >{item.marca}</td>
-                                    <td >{item.modelo}</td>
-                                       <td  ><input  id = {`cantidad-producto-${item.id}`}  key = {`cantidad-producto-${item.id}`}   type="number"  min="1" max="100"  /></td>
-                                         <td >{item.precio}</td>
-                                            <td  id = {item.modelo} >{item.precio}</td> 
-                                               <td ><button  id = {`eliminar-${item.modelo}`} key={`eliminar-${item.modelo}`} onClick={()=>{ eliminarArticulo(item); 
-                                               
-
-                                                }} type="button" className="btn btn-danger"><i className="bi bi-trash-fill"></i></button></td>
-                                              
-                                           </tr>
-                                                
-                                                )
-                                           } 
-                                   </tbody>                                        
-                               </table> 
-                   </div>
-                  
-                   
+      <Link className="btn btn-primary" to={`/VerItem/${item.id}`}>Ver mas sobre este producto</Link>
 
     )
 
-  
-  };
+    }else{
+      return(
+     <Link className="btn btn-primary" to={`/VerItemFetch/${item.id}`}  >Ver mas sobre este producto Fetch</Link> 
+      )
+  }
 
-
- 
-
- 
- 
-
+}
+         
   
 
 
