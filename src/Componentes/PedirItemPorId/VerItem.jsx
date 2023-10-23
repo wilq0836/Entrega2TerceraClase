@@ -20,6 +20,7 @@ export const VerItem = ()=>{
 
     return(
         <div className="container3">
+            
             <ItemDetails  itemEntregado = {item}></ItemDetails>
         </div>
     )
