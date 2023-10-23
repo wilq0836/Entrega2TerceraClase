@@ -55,6 +55,21 @@ body{
   font-family:Georgia, 'Times New Roman', Times, serif;
   
 }
+.botonCarrito1{
+
+  background-color: #e0dadadc;
+  width: 350px;
+  height: 60px;
+  font-style: italic;
+  font-size: 35px;  
+  border-radius: 19px;
+  color: rgb(17, 12, 10);
+  margin-bottom: 10px;
+  margin-top: 10px; 
+  margin-left: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
 
 .modal-title{
 
@@ -86,6 +101,17 @@ body{
   width: auto;
 }
 
+.renglonesCarrito2{
+  background-color: #f0c9a9b0;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 500px;
+  width: 800px;
+  height: auto;
+  border-radius: 15px;
+  
+}
+
 
 
 .Carrusel{
@@ -108,19 +134,61 @@ body{
 
 
 .Navegador{
-  width: 100%; 
-  justify-content: center;
-  display: auto;
-  background-color: hsla(24, 91%, 64%, 0.432);
+  
+  margin-top: 40px;
+  background-color: hsla(23, 7%, 58%, 0.192);
+  color: #d6c4b2;
+  margin-bottom: 60px;
+  display: flexbox;
   width: auto;
+
   
 }
 
-nav>div>lu{
+
+.Navegador nav ul   {
+
+  background-color: rgba(112, 111, 110, 0.438);
+  border-radius: 15px;
+  width: auto;
+  font-size: 30px;  
+  padding:  6px;
+ 
+  color: #0f0f0f;
+  margin-left: 20px;
+}
+
+.Navegador nav button {
+  background-color: rgba(112, 111, 110, 0.438);
+  border-radius: 15px;
+  width: auto;
+  font-size: 30px;  
+  padding:  6px;
+  text-decoration: underline;
+  color: #0f0f0f;
+  margin-left: 20px;
+
+} 
+
+.dropdown-item{
+  color: #080303;
+}
+
+
+.Navegador ul:hover{
+  background-color: #a3908654;
+}
+
+
+
+
+
+
+/*nav>div>lu{
   color: #020202f6; 
   display: inline-block;
   margin-left: 30px;
-  font-size: 35px;
+  font-size: 30px;
   font-style: italic;
   font-family:Georgia, 'Times New Roman', Times, serif;
   
@@ -128,54 +196,50 @@ nav>div>lu{
 
 li{
   color: #0c0c0c;
-  font-size: 20px;
+  font-size: 10px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
   
 }
 
-.dropdown-item{
-  margin-right: 50px;
-  font-size: 30px;
-  text-decoration: underline;
-  margin-left: 20px;
-  margin-right: 20px;
+
+
+.Navegador > li{
+  float: left;
 }
 
-.dropdown-item:hover{
-  
-  color: #e6cfcf;
+.Navegador li lu {
+  display: none;
+  position: absolute;
+  min-width: 140px;
 }
 
-
-nav> div> Link:hover{
-  text-decoration: underline;
-  color: white;
-
- 
-}
-nav>div>lu > Link:hover> Link{
+.Navegador link:hover lu{
   display: block;
-
 }
+*/
 
-/*
-nav> div> lu:hover{
-  text-decoration: underline;
-  color:#fffdfd
-}*/
+.container4{
 
-
+ display: flex;
+}
 .container3{
 
-  background-color: white;
-  display:inline-block;
+  background-color: rgba(231, 137, 82, 0.692);
+  align-content: center;
+  width: 650px;
+  margin-left: 600px;
+  
+}
+#cardImg{
+  width: 540px;
 }
 
 .container1{
 
-  display:flex;
-
+ display: flex;
+ width: 800px;
+ 
 
 }
 
@@ -184,6 +248,8 @@ nav> div> lu:hover{
    max-width: 600px;
 
 }
+
+
 
 
  .ListFetch{
@@ -195,6 +261,22 @@ nav> div> lu:hover{
 
  }
 
+#verCarrito{
+  margin-top: 40px;
+  width: auto;
+ }
+
+ #cardItemid{
+  align-items:center;
+  font-style: italic;
+  font-size: larger;
+
+ }
+ .container-fluid{
+ 
+  width: auto;
+
+ }
 
  #containerContador{
  
@@ -213,7 +295,7 @@ nav> div> lu:hover{
   
  }
 #botonAgregar{
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .Cards1{
@@ -228,7 +310,7 @@ nav> div> lu:hover{
 
 .Cards{
   
-  margin-top: 150px;
+  margin-top: 650px;
   opacity: 75%;
   background-color: #dbd08fdc;
   border-radius: 10px;
@@ -285,7 +367,11 @@ footer{
 
  
  
+ul, ol {
+  list-style: nones;
+}
 
- 
+
+
  
  
