@@ -1,24 +1,26 @@
+
 import { Link} from "react-router-dom";
-import { CarContext } from "./Context/CarContext";
-import { useContext } from "react";
 
 
+const carrito = [];
 
 
+function Targeta ({valorSeleccionadoLista}){
 
 
-function Targeta ({valorSeleccionadoLista, propiedad}){
+  //console.log(JSON.stringify(valorSeleccionadoLista)+ "Esta el la impresion desde Targeta")
+  
+  //ImprimirRenglonesCarrito1()
 
-
-  const {AgregarCarrito} = useContext(CarContext);
 
   const imprimirTarjeta =(valor)=>{
+
     
    
     return( 
 
        
-    <div className="container4">{
+    <div className="container1">{
       
       valor.map((item) => 
 
@@ -31,17 +33,27 @@ function Targeta ({valorSeleccionadoLista, propiedad}){
                 <h5>Marca: {item.marca} </h5>
                 <h5>Modelo: {item.modelo }</h5>
                 <h5>Precio: {item.precio}</h5>
-                <h5>Especificación: {item.cantidad}</h5>  
-            </div>   
-            <hr></hr>
-              <button className="btn btn-primary" onClick={()=>AgregarCarrito(item, 1)}>Agregar Carrito</button>  
-              <hr></hr>
-               <Link className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
-               <hr></hr>
-               {mostrarBoton(propiedad, item)}
+                <h5>Especificación: {item.cantidad}</h5> 
+                
+                              
                
-               <hr></hr>  
-                               
+            </div>    
+           
+              <button  onClick={()=>{
+
+              //let encontrarProducto = carrito.includes(item);
+              //const {id,marca,modelo,precio,especificacion,foto,cantidad} = item;
+                new Carrito(item);
+                carrito.push(item);
+                console.log(carrito);
+               
+       
+                     }} key={item.id}   className="btn btn-secondary">Agregar al Carrito</button> 
+
+                <hr></hr>
+               <Link className="btn btn-primary" to={'/Car'} >Ver Carrito</Link>  
+               <hr></hr>
+               <Link className="btn btn-primary" to={`/VerItem/${item.id}`}  >Ver mas sobre este producto</Link>                   
             </div>
             
             </div>  
@@ -59,29 +71,79 @@ function Targeta ({valorSeleccionadoLista, propiedad}){
     imprimirTarjeta(valorSeleccionadoLista)
     
     )
+
+ 
+        
+
        
 } 
- export default Targeta;
+      export default Targeta;
       
-           
-const mostrarBoton = (propiedad, item)=>{
+      class Carrito {
+        constructor(id,marca, modelo, precio, especificacion, foto, cantidad) {
+            this.id = id;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.precio = precio;
+            this.especificacion = especificacion;
+            this.foto = foto;
+            this.cantidad = cantidad;
+         }}
 
-  if(propiedad === "Biblioteca"){
+ export const ImprimirRenglonesCarrito1 =()=> {
+
+
     return(
+          
 
-      <Link className="btn btn-primary" to={`/VerItem/${item.id}`}>Ver mas sobre este producto</Link>
+       <div className="renglonesCarrito" >    
+          <table className="table">
+            <thead>
+            <tr>
+               <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                   <th scope="col">Cantidad</th>
+                      <th scope="col">Precio</th>
+                          <th scope="col">Total</th>
+                             <th scope="col">Eliminar</th>
+                             </tr>                                           
+                     </thead>
+                          <tbody  id="items">
+
+                          { carrito.map((item)=><tr key={ item.id}>                                               
+                                  <td  >{item.marca}</td>
+                                    <td >{item.modelo}</td>
+                                       <td  ><input  id = {`cantidad-producto-${item.id}`}  key = {`cantidad-producto-${item.id}`}   type="number"  min="1" max="100"  /></td>
+                                         <td >{item.precio}</td>
+                                            <td  id = {item.modelo} >{item.precio}</td> 
+                                               <td ><button  id = {`eliminar-${item.modelo}`} key={`eliminar-${item.modelo}`} onClick={()=>{ 
+
+                                                 let posicion = carrito.indexOf(item); 
+    
+                                                 carrito.splice(posicion,1);  
+                                                 console.log({carrito});
+   
+                                                 }} type="button" className="btn btn-danger"><i className="bi bi-trash-fill"></i></button></td>
+                                              
+                                           </tr>
+                                                
+                                                )
+                                           } 
+                                   </tbody>                                        
+                               </table> 
+                   </div>
+                  
+                   
 
     )
 
-    }else{
-      return(
-     <Link className="btn btn-primary" to={`/VerItemFetch/${item.id}`}  >Ver mas sobre este producto Fetch</Link> 
-      )
-  }
-
-}
-         
   
+  };
+
+ 
+
+
+
 
 
  
