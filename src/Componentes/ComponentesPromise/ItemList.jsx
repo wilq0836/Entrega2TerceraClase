@@ -4,7 +4,7 @@ import Targeta from "../Tarjeta";
 const ItemList =({products})=>{
 
     return(
-       <div>             
+       <div className="container1">             
          <Targeta valorSeleccionadoLista = {products}></Targeta>
       </div>
       
@@ -13,3 +13,4 @@ const ItemList =({products})=>{
 }
 export default ItemList;
 
+/*products.map(prop => <Item key={prop.id}{...prop}></Item>)*/

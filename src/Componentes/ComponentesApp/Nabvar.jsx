@@ -7,52 +7,66 @@ function Navbar (){
 
     return(
         <div className="Navegador">
-            <nav class="navbar" >
-            
-            <div className="dropdown">
-               <ul><Link  className = "dropdown-item"  to='/'>Inicio</Link></ul>
-               </div>
-                <div className="dropdown">
-                 <ul>  <Link className = "dropdown-item" to='/constructor'>Lista Productos Biblioteca</Link> </ul>
-                 </div>
+            <nav className="navbar navbar-expand-lg" >
+
+              <div className="dropdown">
+               <lu ><a>Inicio</a>
+               <Link className = "dropdown-item" to='/'>Inicio</Link> 
+                 </lu>
+                </div>
 
                  <div className="dropdown">
-                   <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Productos</button>
-                     <ul className="dropdown-menu dropdown-menu-dark">
-                      <Link  className = "dropdown-item"  to='/VerItem/Categorias/scott' >Scott</Link>  
-                       <li><Link  className = "dropdown-item"  to='/VerItem/Categorias/Trek'>Trek</Link></li>
-                        <li><Link  className = "dropdown-item"  to='/VerItem/Categorias/Colnago'>Colnago</Link></li>
-                         <li> <Link  className = "dropdown-item"  to='/VerItem/Categorias/Giant'>Giant</Link></li>
-                       </ul>
-                        </div>
-
-                  <div className="dropdown">
-                      <ul> <Link className = "dropdown-item" to='contenedorFetch'>Lista Productos Fetch</Link></ul>
+                  <lu>  <a>Lista Productos Biblioteca</a>                 
+                  <Link className = "dropdown-item" to='/constructor'>Lista Productos Biblioteca</Link>
+                   </lu>
                   </div>
 
                   <div className="dropdown">
-                    <ul><Link className = "dropdown-item" to='/category/:categoryid'>Accesorios</Link></ul>
+                  <lu> <a>Productos</a>               
+                  <Link className = "dropdown-item" to='/VerItem/Categorias/scott' >Scott</Link>
+                  <Link className = "dropdown-item" to='/VerItem/Categorias/Trek'>Trek</Link>
+                  <Link className = "dropdown-item" to='/VerItem/Categorias/Colnago'>Colnago</Link>
+                  <Link className = "dropdown-item" to='/VerItem/Categorias/Giant'>Giant</Link>
+                   </lu>
                   </div>
 
-                  
-                  <div>
-                    <ul><Link className = "dropdown-item" to='/category/:categoryid'>Servicios</Link>        </ul>
-                     </div>
-               
                   <div className="dropdown">
-                    <ul><Link className = "dropdown-item" to='/category/:categoryid'>Contacto</Link></ul>           
-                      </div>
-
-                  <div className="dropdown">
-                    <ul><Link className = "botonCarrito1" type="button"  to='/Carrito'> <i className="bi bi-bag-check-fill">Carrito de compras</i></Link></ul>
+                    <lu> <a>Lista Productos Fetch</a>                
+                     <Link className = "dropdown-item" to='contenedorFetch'>Lista Productos Fetch</Link>
+                     </lu>
                   </div>
 
-             </nav> 
+                  <div className="dropdown">
+                    <lu> <a>Accesorios</a>             
+                    <Link className = "dropdown-item" to='/category/:categoryid'>Accesorios</Link>
+                     </lu>
+                  </div>
+
+                  <div className="dropdown">
+                    <lu> <a>Portafolio</a>              
+                    <Link className = "dropdown-item" to='/category/:categoryid'>Portafolio</Link>
+                     </lu>
+                  </div>
+                  <div className="dropdown">
+                    <lu> <a>Servicios</a>         
+                    <Link className = "dropdown-item" to='/category/:categoryid'>Servicios</Link>
+                     </lu>
+                  </div>
+
+                  <div className="dropdown">
+                  <lu>  <a>Contacto</a>        
+                  <Link className = "dropdown-item" to='/category/:categoryid'>Contacto</Link>
+                     </lu>
+                  </div>
+
+              
+                </nav>
                 
-                  
+            
+
+           
+
         </div>
-        
     )
 
 }

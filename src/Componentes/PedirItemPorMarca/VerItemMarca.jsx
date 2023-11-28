@@ -22,12 +22,12 @@ export const VerItemMarca =()=>{
 
     }, [marca1])
     
-     
+    console.log(productos);    
     
     return(
         <div className="container2">
           
-           <Targeta valorSeleccionadoLista={productos} propiedad={"Biblioteca"}></Targeta>
+           <Targeta valorSeleccionadoLista={productos}></Targeta>
 
         </div>
     )

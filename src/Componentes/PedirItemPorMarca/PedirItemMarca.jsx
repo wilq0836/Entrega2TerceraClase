@@ -6,6 +6,7 @@ export const pedirItemPorMarca=(i)=>{
         const item = todos.filter((e)=> e.marca === i);
        
         setTimeout(()=>{
+            console.log(item);
             resolve(item);
         },300)
         

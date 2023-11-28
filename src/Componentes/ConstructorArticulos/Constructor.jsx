@@ -3,7 +3,7 @@ import Tarjeta from "../Tarjeta";
 
 
 
-function ConstructorProductos({valorSeleccionadoLista, titulo, propiedad}){
+function ConstructorProductos({valorSeleccionadoLista, titulo}){
 
     const valorSel = [];
     
@@ -141,7 +141,7 @@ function ConstructorProductos({valorSeleccionadoLista, titulo, propiedad}){
 
         <h1 className="ObtenerValor">{titulo}</h1>    
        
-          <Tarjeta valorSeleccionadoLista={valorSel} propiedad={propiedad}></Tarjeta>
+       <Tarjeta valorSeleccionadoLista={valorSel}></Tarjeta>
        
         
         </div>

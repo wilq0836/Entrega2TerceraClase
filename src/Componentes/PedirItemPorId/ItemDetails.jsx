@@ -1,21 +1,15 @@
 
 import { useState } from "react";
 import { ContadorProdutos } from "../ComponentesContador/ComponenteContador";
-import {  useContext} from "react";
-import { CarContext } from "../Context/CarContext";
-import { Link } from "react-router-dom";
-
 
 
 
 export const ItemDetails =({itemEntregado})=>{
     
-    
+    //console.log(itemEntregado);
 
     const nuevoArreglo = [{...itemEntregado}];
-   
     const [cantidad, setCantidad ] = useState(0);
-    const { AgregarCarrito} = useContext(CarContext);
 
 
     
@@ -24,18 +18,16 @@ export const ItemDetails =({itemEntregado})=>{
         <div className="container1">
 
        {  nuevoArreglo.map((i)=> 
-        <div id="cardItemid" className="card m-4 p-4"  key = {i.id}>
-         <img id="cardImg" className = "card" src={(i.foto)} alt={i.modelo}/>
-         <br></br>
+        <div className="card m-4 p-4">
+         <img  className = "card" src={(i.foto)} alt={i.modelo}/>
         <h5>Id: {i.id}</h5>
         <h5>Marca: {i.marca}</h5>
         <h5>Modelo: {i.modelo}</h5>
         <h5>Precio: {i.precio}</h5>
         <h5>Cantidad: {i.cantidad}</h5>
         <h5>Agregar al carrito: {cantidad}</h5> 
-        
-        <ContadorProdutos arreglo ={nuevoArreglo} stock={10} AgregarCarrito = {AgregarCarrito} cantidad={(c)=>{console.log("Cantidad Agregada" + c); setCantidad(c); }} />
-        <Link id = "verCarrito"className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
+        <ContadorProdutos arreglo ={itemEntregado} stock={10} cantidad={(c)=>{console.log("Cantidad Agregada" + c); setCantidad(c); }}/>
+      
         
         </div>
         )
@@ -48,4 +40,3 @@ export const ItemDetails =({itemEntregado})=>{
     )
 
 }
-
